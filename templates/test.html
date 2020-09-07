@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>
+        Testing
+    </title>
+    <style>
+       #inputText { 
+       color: tomato;
+       }
+    #addtext { 
+        height: 100px;
+        width: 300px;
+    }
+    #hide {
+        display: none;
+    }
+    </style>
+
+</head>
+
+<body id="body">
+    <p>You have the following options</p>
+    <div>
+        <button onclick="red()" id="red">See this page in red color</button>
+        <button onclick="blue()" id="blue">See this page in blue color</button>
+        <button onclick="green()" id="green">See this page in green color</button>
+    </div>
+    <p></p>
+    <div>
+        <input type="text" placeholder="Type something" id="inputText">
+        <button type="button" onclick="getInputText();">submit name</button>
+    </div>
+    <div>
+        <input type="number" id="inputnumber" max="23" min="0"  placeholder="give me a number" />
+        <button type="button" onclick="getInputNumber();">click to hear the number back</button>
+    </div>
+    <p></p>
+    <p></p>
+    <div>
+        <input type="text" placeholder="write something here" id="addtext">
+        <button type="button" onclick="Addtext()">click to add to this page</button>
+    </div>
+    <p></p>
+    <p id="addhere"></p>
+    <div id="hide"> 
+        <h3>Hidden secrets about the page</h3>
+        <ul>
+        <li> The writer is interested in physics. </li>
+        <li> The writer plays video games.</li>
+        <li> The writer is also interested in mathematics. </li>
+        </ul>
+    
+    </div>
+    <button type="button" id="changevisibility" onclick="show()">show secrets about the page.</button>
+    <script>
+
+
+        var count = 0;
+
+
+
+        function getInputText() {
+                inputText = document.getElementById("inputText").value;
+                if (inputText == "Abhay") {
+                    alert("Access granted");
+                }
+                else {
+                    alert("Access denied");
+
+                }
+                document.getElementById("inputText").value = "";
+            }
+            
+
+
+
+        
+
+
+        function red() {
+
+
+            if (document.body.style.backgroundColor == "tomato"/*"#ffcccb"*/) {
+                alert(" Background Color is already red.");
+
+
+            }
+            else {
+                document.body.style.backgroundColor = "tomato"/*"#ffcccb"*/;
+                alert("You changed the background color to red.");
+
+
+
+
+            }
+
+        }
+        function blue() {
+
+            if (document.body.style.backgroundColor == "lightblue" /*"#ADD8E6"*/) {
+                alert("Background Color is already blue.");
+
+            }
+            else {
+                document.body.style.backgroundColor = "lightblue" /*"#ADD8E6"*/;
+                alert("You changed the background color to blue.");
+
+
+            }
+
+
+        }
+        function green() {
+
+            if (document.body.style.backgroundColor == "lightgreen" /*"#90ee90"*/) {
+
+                alert("Background Color is already green.");
+
+
+            }
+            else {
+                document.body.style.backgroundColor = "lightgreen" /*"#90ee90"*/;
+                console.log("You changed the background color to green.");
+                alert("You changed the background color to green.");
+
+            }
+
+
+        }
+        function getInputNumber() {
+            var inputNumber = document.getElementById("inputnumber").value;
+            alert(inputNumber);
+            document.getElementById("inputnumber").value = "";
+        }
+
+        function Addtext() {
+            var addtext = document.getElementById("addtext").value;
+            document.getElementById("addhere").textContent += " " + addtext;
+            document.getElementById("addtext").value = "";
+
+        }
+
+        function show() {
+            count += 1;
+            if (count%2 == 1){
+            document.getElementById("changevisibility").innerHTML = "Hide secrets about this page.";
+            document.getElementById("hide").style.display = "block";
+            }
+            if (count%2 == 0){
+                document.getElementById("changevisibility").innerHTML = "show secrets about this page.";
+                document.getElementById("hide").style.display = "none";
+
+            }
+            
+        }
+
+
+
+
+
+    </script>
+</body>
+
+</html>

@@ -11,7 +11,5 @@ def index():
 @app.route("/Abhishek")
 def abhishek():
     return "<h1>Abhishek is a very good friend of author</h1><ul><li>He is lovely</li><li>He also loves phyics.</li><li>He is currently studying in IIT.</li></ul>"
-@app.route("/test")
 
-
-
+              
